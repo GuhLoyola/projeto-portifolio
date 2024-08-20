@@ -1,12 +1,12 @@
+import Header from "../components/Header"
 import Home from "../components/Home/home"
-import NavBar from "../components/NavBar"
 
 const HomePage = () => {
     return (
-        <>
-            <NavBar />
+        <main>
+            <Header />
             <Home />
-        </>
+        </main>
     )
 }
 
