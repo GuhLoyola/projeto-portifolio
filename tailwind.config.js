@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         "black-russian": "#121212",
+        "black-russian-66": "#121212a9",
         "cod-gray": "#282828",
         "mine-shaft": "#3f3f3f",
         "dove-gray": "#575757",
