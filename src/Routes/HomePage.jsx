@@ -3,10 +3,12 @@ import Home from "../components/Home/home"
 
 const HomePage = () => {
     return (
-        <main>
+        <>
             <Header />
-            <Home />
-        </main>
+            <main>
+                <Home />
+            </main>
+        </>
     )
 }
 
