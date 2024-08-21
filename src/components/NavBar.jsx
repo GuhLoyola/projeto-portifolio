@@ -1,65 +1,51 @@
+import { CodeBracketIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const NavBar = () => {
 
-    const [navExpanded, setNavExpanded] = useState(false)
-    const [navColor, setNavColor] = useState(false)
+    let Links = [
+        { name: 'Sobre mim', link: '/sobre-mim', id: 1 },
+        { name: 'Projetos', link: '/projetos', id: 2 },
+        { name: 'Contato', link: '/contato', id: 3 },
+    ]
+
+    let [isOpen, setIsOpen] = useState(false)
+
+    let [navColor, setNavColor] = useState(false)
 
     const handleScroll = () => {
         window.scrollY >= 20 ? setNavColor(true) : setNavColor(false)
     }
 
     useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
+        window.addEventListener('scroll', handleScroll)
         return () => {
-            window.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     return (
-        <nav className={`fixed w-full z-50 top-0 transition-colors duration-300 
-        ${navColor ? 'bg-black-russian-66 backdrop-blur-md shadow-md' : 'bg-transparent backdrop-blur-md'}`}>
-            <div className="mx-auto p-4 flex justify-between items-center text-smoky-white">
-                <div className="flex items-center">
-                    <Link to='/'>
-                        <p className="uppercase font-bold">Gustavo Loyola</p>
-                    </Link>
+        <nav className={`nav ${navColor ? 'md:bg-black-russian-66 md:backdrop-blur-md shadow-md' : 'bg-transparent'} bg-black-russian`}>
+            <div className="md:px-10 py-4 px-7 md:flex justify-between items-center text-smoky-white">
+                <div className="flex text-2xl items-center gap-2">
+                    <CodeBracketIcon className="w-7 h-7 text-amethyst" />
+                    <Link to='/' className="font-bold">Gustavo Loyola</Link>
                 </div>
-                <div className="md:hidden" onClick={() => setNavExpanded(!navExpanded)}>
-                    <div className="space-y-2">
-                        <span className={`block w-8 h-0.5 bg-smoky-white transition-transform duration-300 ease-in-out 
-                            ${navExpanded ? 'rotate-45 translate-y-2' : ''}`}></span>
 
-                        <span className={`block w-8 h-0.5 bg-smoky-white transition-opacity duration-300 ease-in-out
-                            ${navExpanded ? 'opacity-0' : ''}`}></span>
+                <div onClick={() => setIsOpen(!isOpen)} className="w-7 h-7 absolute right-8 top-6 cursor-pointer md:hidden">
+                    {isOpen ? <XMarkIcon /> : <Bars3Icon />}
+                </div>
 
-                        <span className={`block w-8 h-0.5 bg-smoky-white transition-transform duration-300 ease-in-out 
-                            ${navExpanded ? '-rotate-45 -translate-y-3' : ''}`}></span>
-                    </div>
-                </div>
-                <div className={`${navExpanded ? "block" : "hidden"} md:flex md:items-center md:space-x-6`}>
-                    <ul className="flex flex-col md:flex-row md:items-center gap-4 p-4">
-                        <li>
-                            <Link to='/sobre-mim' className="text-smoky-white flex items-center gap-1"
-                                onClick={() => setNavExpanded(false)}>
-                                Sobre mim
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/projetos' className="text-white flex items-center gap-1"
-                                onClick={() => setNavExpanded(false)}>
-                                Projetos
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/contato' className="text-white flex items-center gap-1"
-                                onClick={() => setNavExpanded(false)}>
-                                Contato
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                <ul className={`menu bg-black-russian ${isOpen ? 'top-12 shadow-md' : 'top-[-490px]'}`}>
+                    {
+                        Links.map(link => (
+                            <li key={link.id} className="my-7 md:my-0 md:ml-8 font-semibold">
+                                <Link to={link.link} className="z-[-1]">{link.name}</Link>
+                            </li>
+                        ))
+                    }
+                </ul>
             </div>
         </nav>
     )
