@@ -40,8 +40,10 @@ const NavBar = () => {
                 <ul className={`menu bg-black-russian ${isOpen ? 'top-12 shadow-md' : 'top-[-490px]'}`}>
                     {
                         Links.map(link => (
-                            <li key={link.id} className="my-7 md:my-0 md:ml-8 font-semibold">
-                                <Link to={link.link} className="z-[-1]">{link.name}</Link>
+                            <li key={link.id} className="my-7 md:my-0 md:ml-8 font-semibold relative">
+                                <Link to={link.link} className="z-[-1] link">
+                                    {link.name}
+                                </Link>
                             </li>
                         ))
                     }
