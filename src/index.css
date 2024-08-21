@@ -12,6 +12,6 @@
     }
 
     .link {
-        @apply transition-all duration-500 before:content-[''] before:absolute before:-bottom-0.5 before:left-0 before:w-0 before:h-0.5 before:rounded-full before:opacity-0 before:transition-all before:duration-300 before:bg-smoky-white hover:before:w-full hover:before:opacity-100
+        @apply md:transition-all md:duration-500 md:before:content-[''] md:before:absolute md:before:-bottom-0.5 md:before:left-0 md:before:w-0 md:before:h-0.5 md:before:rounded-full md:before:opacity-0 md:before:transition-all md:before:duration-300 md:before:bg-smoky-white md:hover:before:w-full md:hover:before:opacity-100
     }
 }
