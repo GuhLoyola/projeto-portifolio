@@ -26,7 +26,7 @@ const NavBar = () => {
     }, [])
 
     return (
-        <nav className={`nav ${navColor ? 'md:bg-black-russian-66 md:backdrop-blur-md shadow-md' : 'bg-transparent'} bg-black-russian`}>
+        <nav className={`nav ${navColor ? 'md:bg-black-russian-66 md:backdrop-blur-md shadow-md' : 'bg-transparent'} bg-black-russian font-poppins`}>
             <div className="md:px-10 py-4 px-7 md:flex justify-between items-center text-smoky-white">
                 <div className="flex text-2xl items-center gap-2">
                     <CodeBracketIcon className="w-7 h-7 text-amethyst" />
