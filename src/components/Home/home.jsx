@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <section className="bg-black-russian h-screen">
             <div className="flex justify-center flex-col items-center gap-10 h-full md:flex-row">
-                <img src={Img_Guh} alt="Imagem de Gustavo loyola" className="bg-blue-300 w-56 h-56 md:w-64 md:h-64 rounded-full z-30" />
+                <img src={Img_Guh} alt="Imagem de Gustavo loyola" className="bg-purple-300 w-56 h-56 md:w-64 md:h-64 rounded-full z-30" />
                 <h1 className="text-smoky-white text-xl md:text-3xl text-center font-poppins">Olá, eu sou Gustavo Loyola <br />
                     <ReactTyped strings={['Desenvolvedor Front End']} typeSpeed={100} loop className="text-blue-violet" />
                 </h1>
