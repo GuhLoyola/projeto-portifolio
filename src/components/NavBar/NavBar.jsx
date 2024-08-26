@@ -1,5 +1,6 @@
-import { CodeBracketIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/16/solid"
 import { useEffect, useState } from "react"
+import { FaBars, FaCode } from "react-icons/fa"
+import { FaXmark } from "react-icons/fa6"
 import { Link } from "react-router-dom"
 
 const NavBar = () => {
@@ -29,12 +30,12 @@ const NavBar = () => {
         <nav className={`nav ${navColor ? 'md:bg-black-russian-66 md:backdrop-blur-md shadow-md' : 'bg-transparent'} bg-black-russian font-poppins`}>
             <div className="md:px-10 py-4 px-7 md:flex justify-between items-center text-smoky-white">
                 <div className="flex text-2xl items-center gap-2">
-                    <CodeBracketIcon className="w-7 h-7 text-amethyst" />
+                    <FaCode className="w-7 h-7 text-blue-violet" />
                     <Link to='/' className="font-bold">Gustavo Loyola</Link>
                 </div>
 
-                <div onClick={() => setIsOpen(!isOpen)} className="w-7 h-7 absolute right-8 top-6 cursor-pointer md:hidden">
-                    {isOpen ? <XMarkIcon /> : <Bars3Icon />}
+                <div onClick={() => setIsOpen(!isOpen)} className="w-7 h-7 absolute right-8 top-4.5 cursor-pointer md:hidden">
+                    {isOpen ? <FaXmark className="w-7 h-7" /> : <FaBars className="w-7 h-7" />}
                 </div>
 
                 <ul className={`menu bg-black-russian ${isOpen ? 'top-12 shadow-md' : 'top-[-490px]'}`}>
