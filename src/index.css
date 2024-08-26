@@ -14,4 +14,8 @@
     .link {
         @apply md:transition-all md:duration-500 md:before:content-[''] md:before:absolute md:before:-bottom-0.5 md:before:left-0 md:before:w-0 md:before:h-0.5 md:before:rounded-full md:before:opacity-0 md:before:transition-all md:before:duration-300 md:before:bg-smoky-white md:hover:before:w-full md:hover:before:opacity-100
     }
+
+    .media-icon {
+        @apply w-16 h-16 p-4 hover:text-blue-violet transition-all duration-300
+    }
 }
